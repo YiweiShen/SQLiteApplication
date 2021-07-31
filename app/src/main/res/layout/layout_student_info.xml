@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/stdName"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/stdName"
+            android:textColor="#2196F3"
+            android:textSize="24sp" />
+
+        <TextView
+            android:id="@+id/stdContact"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/stdContact"
+            android:textColor="#4CAF50"
+            android:textSize="16sp" />
+
+        <TextView
+            android:id="@+id/stdDob"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/stdDob"
+            android:textColor="#4CAF50"
+            android:textSize="16sp" />
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,8 +1,8 @@
 package com.example.sqliteapplication;
 
-import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -73,9 +73,7 @@ public class MainActivity extends AppCompatActivity {
         delete.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
                 String nameTxt = name.getText().toString();
-
                 Boolean checkdeletedata = DB.deleteuserdata(nameTxt);
 
                 if(checkdeletedata){
@@ -84,36 +82,21 @@ public class MainActivity extends AppCompatActivity {
                 else {
                     Toast.makeText(MainActivity.this, "Entry not Deleted", Toast.LENGTH_SHORT).show();
                 }
-
             }
         });
 
         view.setOnClickListener(new View.OnClickListener() {
 
-
             @Override
             public void onClick(View v) {
-
 
                 Cursor res = DB.getdata();
                 if(res.getCount() == 0){
                     Toast.makeText(MainActivity.this, "Nothing existed!", Toast.LENGTH_SHORT).show();
-
                 }
                 else {
-
-                    StringBuffer buffer = new StringBuffer();
-                    while(res.moveToNext()){
-                        buffer.append("Name: "+res.getString(0)+"\n");
-                        buffer.append("Content: "+res.getString(1)+"\n");
-                        buffer.append("Date of Birth: "+res.getString(2)+"\n\n\n");
-                    }
-
-                    AlertDialog.Builder builder = new AlertDialog.Builder(MainActivity.this);
-                    builder.setCancelable(true);
-                    builder.setTitle("Results");
-                    builder.setMessage(buffer.toString());
-                    builder.show();
+                    Intent student_intent = new Intent(MainActivity.this, StudentActivity.class);
+                    startActivity(student_intent);
                 }
             }
         });

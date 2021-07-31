@@ -1,3 +1,6 @@
 <resources>
     <string name="app_name">SQLiteApplication</string>
+    <string name="stdName">Name: </string>
+    <string name="stdContact">Contact: </string>
+    <string name="stdDob">DOB: </string>
 </resources>
